@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 import Cart from './Cart';
 import PriceDetails from './PriceDetails';
@@ -38,4 +39,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(MyCart);
+export default withRouter(connect(mapStateToProps)(MyCart));

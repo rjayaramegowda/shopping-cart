@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { FILTER_BY_PRICE } from "../constants";
 
 function mapStateToProps(state) {
@@ -58,4 +59,4 @@ maxTxtCHange(e) {
   }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(FiltersSidebar);
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)(FiltersSidebar));

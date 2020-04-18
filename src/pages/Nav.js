@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-
+import { Link, withRouter } from 'react-router-dom';
 
 function mapStateToProps(state) {
     return {
@@ -23,4 +22,4 @@ class Nav extends Component {
     }
 }
 
-export default connect(mapStateToProps)(Nav);
+export default withRouter(connect(mapStateToProps)(Nav));

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import Product from './Product';
 
 function mapStateToProps(state) {
@@ -22,4 +23,4 @@ class ProductList extends Component {
     }
 }
 
-export default connect(mapStateToProps)(ProductList);
+export default withRouter(connect(mapStateToProps)(ProductList));

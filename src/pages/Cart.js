@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+
 import { REMOVE_FROM_CART, ADD_TO_CART_QUANTITY, REMOVE_FROM_CARTQUANTITY } from "../constants";
 
 function mapStateToProps(state) {
@@ -23,8 +25,8 @@ function mapDispatchToProps(dispatch) {
 
 class Cart extends Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.addToCartQuantity = this.addToCartQuantity.bind(this);
         this.removeFromCartQuantity = this.removeFromCartQuantity.bind(this);
         this.removeFromCart = this.removeFromCart.bind(this);
@@ -74,4 +76,4 @@ class Cart extends Component {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Cart);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Cart));

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import PriceItem from './PriceItem';
 
 function mapStateToProps(state) {
@@ -42,4 +43,4 @@ class PriceDetails extends Component {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(PriceDetails);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PriceDetails));

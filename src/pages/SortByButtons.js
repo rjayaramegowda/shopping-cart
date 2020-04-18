@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom'
+
 import {
   SORT_BY_PRICE_HIGH,
   SORT_BY_PRICE_LOW,
@@ -84,4 +86,4 @@ filterByPrice() {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(SortByButtons);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SortByButtons));
