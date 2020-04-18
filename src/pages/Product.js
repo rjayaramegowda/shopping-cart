@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter } from 'react-router-dom'
-import { ADD_TO_CART } from "../constants";
+import { ADD_TO_CART, ADD_TO_CART_QUANTITY } from "../constants";
 
 class Product extends Component {
   constructor() {
@@ -11,7 +11,12 @@ class Product extends Component {
 
   addToCart() {
     console.log("[Product] addToCart()");
-    this.props.addToCart(this.props.vo);
+    if(this.props.carts.indexOf(this.props.vo) <0 ) {
+      this.props.addToCart(this.props.vo);
+    } else {
+      this.props.addToCartQuantity(this.props.vo);
+    }
+    
   }
 
   render() {
@@ -44,11 +49,16 @@ class Product extends Component {
 }
 
 function mapStateToProps(state) {
-  return {};
+  return {
+    carts: state.carts
+  };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
+    addToCartQuantity: function (vo) {
+      dispatch({ type: ADD_TO_CART_QUANTITY, vo });
+    },
     addToCart: function (vo) {
       dispatch({ type: ADD_TO_CART, vo });
     }
