@@ -1,0 +1,99 @@
+/*
+   * Product
+   */
+
+.product {
+	padding: 12px;
+	border: solid 1px #ccc;
+}
+
+.product span {
+	font-weight: bold;
+}
+
+.product h6 {
+	margin-top: 4px;
+	font-weight: normal;
+}
+
+.product .text-muted {
+	color: #aaa !important;
+	text-decoration: line-through;
+}
+
+
+/*
+   * Cart
+   */
+
+.cart {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.cart img {
+	width: 200px;
+}
+
+.cart input {
+	width: 35px;
+	margin: 0 4px;
+}
+
+.cart span {
+	font-weight: bold;
+	padding: 4px;
+}
+
+.cart h6 {
+	margin-top: 4px;
+	font-weight: normal;
+}
+
+.cart .text-muted {
+	color: #aaa !important;
+	text-decoration: line-through;
+}
+
+
+/*
+   * Sidebar
+   */
+
+.sidebar {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 100;
+	/* Behind the navbar */
+	padding: 60px 0 0;
+	/* Height of navbar */
+	box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+}
+
+.sidebar-sticky {
+	position: relative;
+	top: 0;
+	height: calc(100vh - 62px);
+	padding-top: .5rem;
+	overflow-x: hidden;
+	overflow-y: auto;	
+}
+
+@supports ((position: -webkit-sticky) or (position: sticky)) {
+	.sidebar-sticky {
+		position: -webkit-sticky;
+		position: sticky;
+	}
+}
+
+
+/*
+   * Content
+   */
+
+[role="main"] {
+	padding-top: 50px;
+	/* Space for fixed navbar */
+}
