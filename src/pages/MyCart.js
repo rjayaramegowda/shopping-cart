@@ -18,7 +18,7 @@ class MyCart extends Component {
                         <h3 className="my-4">My Cart</h3>
                         {
                           this.props.carts.map((vo, index) => {
-                            return (<Cart vo={vo} key={index} /> )
+                            return (<Cart vo={vo} key={index} quantity={vo.quantity} /> )
                           })
                         }
                         

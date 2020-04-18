@@ -63,7 +63,7 @@ class Cart extends Component {
                           </div>
                           <div className="d-flex justify-content-between small">
                             <button onClick={this.removeFromCartQuantity} className="btn btn-sm btn-primary rounded-circle"><i className="fa fa-minus" /></button>
-                            {this.props.vo.quantity} 
+                            {this.props.quantity} 
                             <button onClick={this.addToCartQuantity} className="btn btn-sm btn-primary rounded-circle"><i className="fa fa-plus" /></button>
                           </div>
                           <div>
