@@ -26,14 +26,14 @@ const cartReducer = (state = [], action) => {
   };
 
   // In Progress die to error
- function removeFromCart(dataProvider, vo) {
-   /*var result = Array.from(dataProvider); 
-   var index = dataProvider.indexOf(vo);   
-   return result.splice(index, 1); */
-  return dataProvider;
+ function removeFromCart(dataProvider, vo) { 
+  if(dataProvider.length === 1) return []; 
+   var result = Array.from(dataProvider); 
+   result.splice(dataProvider.indexOf(vo), 1);      
+   return result;   
  }
 
- function addToCartQuantity(dataProvider, vo) {
+ function addToCartQuantity(dataProvider, vo) {   
    var result = Array.from(dataProvider);
    for(var i=0; i<result.length; i++) {      
       if(result[i] === vo) {
@@ -44,8 +44,13 @@ const cartReducer = (state = [], action) => {
  }
 
  function removeFromCartQuantity(dataProvider, vo) {
-   var result = Array.from(dataProvider);        
-   return result.splice(result.indexOf(vo), 1); ;
+  var result = Array.from(dataProvider);
+  for(var i=0; i<result.length; i++) {      
+     if(result[i] === vo && result[i].quantity > 1) {
+        result[i].quantity = (result[i].quantity - 1);        
+     }
+  }
+  return result; 
  }
 
 

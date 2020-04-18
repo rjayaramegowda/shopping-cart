@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { REMOVE_FROM_CART, ADD_TO_CART_QUANTITY } from "../constants";
+import { REMOVE_FROM_CART, ADD_TO_CART_QUANTITY, REMOVE_FROM_CARTQUANTITY } from "../constants";
 
 function mapStateToProps(state) {
     return {
@@ -16,7 +16,7 @@ function mapDispatchToProps(dispatch) {
         dispatch({ type: REMOVE_FROM_CART, vo });
       },
       removeFromCartQuantity: function (vo) {
-        dispatch({ type: REMOVE_FROM_CART, vo });
+        dispatch({ type: REMOVE_FROM_CARTQUANTITY, vo });
       }
     };
   }
@@ -36,12 +36,10 @@ class Cart extends Component {
       }
 
       removeFromCartQuantity() {
-        console.log("[Cart] removeAllSelectedFromCart()");
-        if(this.props.vo.quantity > 1) {
-            //this.props.vo.quantity -= 1;
+        console.log("[Cart] removeFromCartQuantity()");
+        if(this.props.vo.quantity > 1) {            
             this.props.removeFromCartQuantity(this.props.vo);
-        }
-        
+        }        
       }
 
       removeFromCart() {
