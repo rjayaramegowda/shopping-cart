@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import "./styles.scss";
 
 import Nav from './pages/Nav';
 import MyCart from './pages/MyCart';
